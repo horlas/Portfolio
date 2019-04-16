@@ -1,0 +1,536 @@
+
+{% block head %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Hello Dynalogic !</title>
+  <!-- Bootstrap core CSS -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Plugin CSS -->
+  <link href="{{ url_for('static', filename='vendor/magnific-popup/magnific-popup.css')}}" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/freelancer.min.css')}}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/custom.css')}}" rel="stylesheet">
+
+  <!-- favicon -->
+  <link rel='icon' href="{{ url_for('static', filename='img/favicon.ico')}}" type='image/x-icon' sizes="16x16" />
+
+</head>
+{% endblock %}
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Aurélia Gourbère</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">A propos</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+      <!-- Message section -->
+
+  <div class="toast" data-delay="7000" >
+     {% if messages %}
+  {% for message in messages %}
+  <div class="toast-header">
+    <strong class="mr-auto text-primary">Cher visiteur</strong>
+  </div>
+  <div class="toast-body">
+    {{ message }}
+  </div>
+</div>
+  {% endfor %}
+    {% endif %}
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead bg-primary text-white text-center">
+    <div class="container">
+      <img class="img-fluid mb-5 d-block mx-auto " src="{{ url_for('static',filename= 'img/photorond.png' )}}" alt="profil">
+      <h1 class="text-uppercase mb-0">Hello Dynalogic !</h1>
+      <hr class="star-light">
+      <h2 class="font-weight-light mb-0">J'ai vu votre annonce de recherche d'un stagiaire développeur Django .<br>
+        Le ton et le descriptif m'ont énormément plu. <br> Je viens d'etre diplomée développeur Django Python . <br>
+        Seriez-vous encore à la recherche de nouvelles recrues ? <br> Pour ma part, je suis à la recherche d'une première expérience.<br>
+      J'habite à Montpellier mais cependant je me dis vous seriez peut-etre ouvert à un emploi à distance avec déplacements réguliers au siège...<br>
+      </h2>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class=" mb-0" id="about">
+    <div class="container">
+      <h2 class="text-center text-uppercase">A propos</h2>
+      <hr class="star-dark mb-5">
+      <div class="row">
+        <div class="col-lg-4 ml-auto">
+          <p class="lead">Forte d'un premier parcours professionnel très polyvalent (technique et gestion) ,
+            j'ai toujours été passionnée par l'informatique. Il y a un an j'ai eu la formidable opportunité de faire une
+            reconversion professionnelle diplomante en tant que déveleppouse d'application en Python...</p>
+        </div>
+        <div class="col-lg-4 mr-auto">
+          <p class="lead">J'ai une forte appétance pour le Backend, j'adore développer en python et je connais relativement
+            bien le Framework Django . Cependant, je m'interesse aussi aux technologies liées au Frontend. Je vous invite à découvrir mes projets réalisés ainsi qu'à télécharger mon CV. </p>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a class="btn btn-xl btn-outline-dark" href="{{ url_for('static',filename= 'img/CV.pdf' )}}">
+          <i class="fas fa-download mr-2"></i>
+          CV
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Portfolio Grid Section -->
+  <section class="portfolio bg-primary " id="portfolio">
+    <div class="container">
+      <h2 class="text-center text-uppercase text-white  mb-0">Portfolio</h2>
+      <hr class="star-light mb-5">
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+          <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
+            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+              <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                <i class="fas fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="{{ url_for('static',filename= 'img/portfolio/projet1.png' )}}" alt="">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-2">
+            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+              <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                <i class="fas fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="{{ url_for('static',filename= 'img/portfolio/projet2.png' )}}" alt="">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-3">
+            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+              <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                <i class="fas fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="{{ url_for('static',filename= 'img/portfolio/projet3.png' )}}" alt="">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-4">
+            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+              <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                <i class="fas fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="{{ url_for('static',filename= 'img/portfolio/projet4.png' )}}" alt="">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-5">
+            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+              <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                <i class="fas fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="{{ url_for('static',filename= 'img/portfolio/projet5.png' )}}" alt="">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-6">
+            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+              <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                <i class="fas fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="{{ url_for('static',filename= 'img/portfolio/projet6.png' )}}" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="text-center text-uppercase text-secondary mb-0">Contactez Moi</h2>
+      <hr class="star-dark mb-5">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+
+
+
+          <!-------------- copy of the form --------->
+
+
+          <form name="EnvoiMessage" id="contactForm" novalidate="novalidate" method="post">
+            {{form.hidden_tag()}}
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                {{ form.nom.label }}
+
+                {{ form.nom(class="form-control", required="required", placeholder="Nom")}}
+
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                {{ form.email.label }}
+
+                {{ form.email(class="form-control", required="required", placeholder="Email")}}
+
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                {{ form.message.label }}
+                                {{ form.message(class="form-control", required="required", placeholder="Message")}}
+
+
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <p>{{ form.submit(class="btn btn-primary btn-xl") }}</p>
+<!--            <div class="form-group">-->
+<!--              <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Send</button>-->
+<!--            </div>-->
+          </form>
+          <!--------- end of copy form ---------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Localisation</h4>
+          <p class="lead mb-0">145 rue Guillaume Janvier
+            <br>34070 Montpellier, France</p>
+        </div>
+        <div class="col-md-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Sur le Web</h4>
+          <ul class="list-inline mb-0">
+
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://github.com/horlas" target="_blank">
+                <i class="fab fa-fw fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://www.linkedin.com/in/aur%C3%A9lia-gourb%C3%A8re/" target="_blank">
+                <i class="fab fa-fw fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-uppercase mb-4">Credits</h4>
+          <p class="lead mb-0">Thème bootstrap Freelancer.<br>
+                                Page propulsée par Flask 1.0.2. <br>
+                                Favicon: Hand by Jakob Vogel from the Noun Project
+           </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="copyright py-4 text-center text-white">
+    <div class="container">
+      <small>Copyright &copy; Aurélia Gourbère 2019</small>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+  <div class="scroll-to-top d-lg-none position-fixed ">
+    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+
+  <!-- Portfolio Modals -->
+
+  <!-- Portfolio Modal 1 -->
+  <div class="portfolio-modal mfp-hide" id="portfolio-modal-1">
+    <div class="portfolio-modal-dialog bg-white">
+      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+        <i class="fa fa-3x fa-times"></i>
+      </a>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-secondary text-uppercase mb-0">Jeu Video </h2>
+            <hr class="star-dark mb-5">
+            <div class="embed-responsive embed-responsive-16by9">
+              <video autoplay loop class="embed-responsive-item">
+                <source src="{{ url_for('static',filename= 'video/projet3_essai.mp4' )}}" type="video/mp4">
+                </video>
+            </div>
+            <p class="mb-3 mt-5">Jeu de labyrinthe : MacGyver doit attraper les objets pour vaincre le méchant ! Il s'agit de mon premier programme en Python. Aujourd'hui je ne l'écrirais certainement pas comme ça !
+              Cependant je le laisse avec son code initial de manière à mesurer mes progrès. J'ai utilisé la bibliothèque Pygame pour le réaliser. </p>
+            <div class="row justify-content-center">
+            <a class="mb-3 btn btn-secondary rounded-pill " href="https://github.com/horlas/OC_Project3" target="_blank">
+                <i class="fab fa-github"></i> Dép&ocirc;t github
+              </a>
+            </div>
+            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+              <i class="fa fa-close"></i>
+              Close Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 2 -->
+  <div class="portfolio-modal mfp-hide" id="portfolio-modal-2">
+    <div class="portfolio-modal-dialog bg-white">
+      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+        <i class="fa fa-3x fa-times"></i>
+      </a>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-secondary text-uppercase mb-0">Utilisation de données publiques</h2>
+            <hr class="star-dark mb-5">
+            <img class="img-fluid mb-5" src="{{ url_for('static',filename= 'img/portfolio/projet2.png' )}}"  alt="">
+            <p class="mb-5">Programme d'extraction et de traitement de données. L'utilisateurs choisi un produit de consommation quotidienne,
+              le programme lui retourne un produit substituant ayant de meilleures qualités nutritives.
+              Consommation de l'<a href="https://fr.openfoodfacts.org/categorie/produits-a-tartiner.json" >API Openfoodfacts</a>.
+              Création d'une base Mysql. Pour les besoins du programme j'ai utilisé l'ORM SqlAlchemy.</p>
+            <div class="row justify-content-center">
+            <a class="mb-3 btn btn-secondary  rounded-pill " href="https://github.com/horlas/OC_Project5" target="_blank">
+                <i class="fab fa-github"></i> Dép&ocirc;t github
+              </a>
+            </div>
+            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+              <i class="fa fa-close"></i>
+              Close Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 3 -->
+  <div class="portfolio-modal mfp-hide" id="portfolio-modal-3">
+    <div class="portfolio-modal-dialog bg-white">
+      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+        <i class="fa fa-3x fa-times"></i>
+      </a>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-secondary text-uppercase mb-0">GrandPy Papy Robot</h2>
+            <hr class="star-dark mb-5">
+            <img class="img-fluid mb-5" src="{{ url_for('static',filename= 'img/portfolio/projet3.png' )}}" alt="">
+            <p class="mb-5">Réalisation d'un site statique en Flask . L'utilisateur saisi l'endroit où il veut aller, le robot lui retourne la localisation et une histoire rigolote sur cet emplacement.
+            Pour cela le programme fait des appels en Ajax aux API Googlemap et Wikipédia . J'ai implémenté quelques fontionnalités de traitement de langage. Ce projet simple est réalisé en Flask, il utilise Jquery et Bootstrap pour la partie Front.
+            Il s'agit de mon premier projet web. Le déploiement est effectué sur Heroku.</p>
+            <div class="row justify-content-center">
+            <a class="mb-3 btn btn-secondary  rounded-pill " href="https://papyrobotag.herokuapp.com/" target="_blank">
+                <i class="fab fa-dribbble"></i> Site en ligne
+              </a>
+
+            <a class="mb-3 btn btn-secondary  rounded-pill " href="https://github.com/horlas/OC_Project7" target="_blank">
+                <i class="fab fa-github"></i> Dép&ocirc;t github
+              </a>
+            </div>
+            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+              <i class="fa fa-close"></i>
+              Close Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 4 -->
+  <div class="portfolio-modal mfp-hide" id="portfolio-modal-4">
+    <div class="portfolio-modal-dialog bg-white">
+      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+        <i class="fa fa-3x fa-times"></i>
+      </a>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-secondary text-uppercase mb-0">Déploiement d'une application</h2>
+            <hr class="star-dark mb-5">
+            <img class="img-fluid mb-5" src="{{ url_for('static',filename= 'img/portfolio/projet4.png' )}}" alt="">
+            <p class="mb-5">Projet qui m'a permis de m'initier au DevOps. Sur un serveur physique dédié, j'ai créé un container LXC dans lequel j'ai hébergé mon application .
+              Le document dans le dép&ocirc;t retrace toutes les étapes et outils de monitoring mis en place.
+            </p>
+            <div class="row justify-content-center">
+            <a class="mb-3 btn btn-secondary  rounded-pill " href="https://github.com/horlas/OC_Project10" target="_blank">
+                <i class="fab fa-github"></i> Dép&ocirc;t github
+              </a>
+            </div>
+            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+              <i class="fa fa-close"></i>
+              Close Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 5 -->
+  <div class="portfolio-modal mfp-hide" id="portfolio-modal-5">
+    <div class="portfolio-modal-dialog bg-white">
+      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+        <i class="fa fa-3x fa-times"></i>
+      </a>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-secondary text-uppercase mb-0">Pur beurre</h2>
+            <hr class="star-dark mb-5">
+            <img class="img-fluid mb-5" src="{{ url_for('static',filename= 'img/portfolio/projet5.png' )}}" alt="">
+            <p class="mb-5">Découverte du Framework Django (la révélation! ;-) . Il s'agit d'un site web reprenant les projets précédents en matière de traitement et de base de données.
+              L'application propose au visiteur un produit alimentaire de meilleure qualité que celui choisi. Il permet la création d'un compte ainsi que la sauvegarde des recherches.
+              Coté backend , le programme interroge une base de données propriétaire ainsi que l'API Openfoodfacts. L'interface est réalisée en Bootstrap et Jquery.</p>
+            <div class="row justify-content-center">
+            <a class="mb-3 btn btn-secondary  rounded-pill " href="http://purbeurre.cedrix.org/ "target="_blank">
+                <i class="fab fa-dribbble"></i> Site en ligne
+              </a>
+
+            <a class="mb-3 btn btn-secondary  rounded-pill " href="https://github.com/horlas/OC_Project11" target="_blank">
+                <i class="fab fa-github"></i> Dép&ocirc;t github
+              </a>
+            </div>
+            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+              <i class="fa fa-close"></i>
+              Close Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 6 -->
+  <div class="portfolio-modal mfp-hide" id="portfolio-modal-6">
+    <div class="portfolio-modal-dialog bg-white">
+      <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+        <i class="fa fa-3x fa-times"></i>
+      </a>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-secondary text-uppercase mb-0">My First Band</h2>
+            <hr class="star-dark mb-5">
+            <img class="img-fluid mb-5" src="{{ url_for('static',filename= 'img/portfolio/projet6.png' )}}" alt="">
+            <p class="mb-5">My First Band est un projet personnel de réalisation d'un réseau social de musiciens simple et intuitif.
+              Il propose un outil de gestion de projet dedié au travail du groupe. La version présentée est un prototype réalisé en Django et Materialize CSS .
+              La version 2 du projet sera sous forme d'API avec l'utilisation de Vue.js , en client Front (l'occasion pour moi de me confronter à ces technologies).</p>
+            <div class="row justify-content-center">
+            <a class="mb-3 btn btn-secondary  rounded-pill " href="http://myfirstband.cedrix.org/" target="_blank">
+                <i class="fab fa-dribbble"></i> Site en ligne
+              </a>
+            <a class="mb-3 btn btn-secondary  rounded-pill " href="https://github.com/horlas/MyFirstBand" target="_blank">
+                <i class="fab fa-github"></i> Dép&ocirc;t github
+              </a>
+            </div>
+            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+              <i class="fa fa-close"></i>
+              Close Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ url_for('static',filename= 'vendor/jquery/jquery.min.js' )}}"></script>
+  <script src="{{ url_for('static',filename= 'vendor/bootstrap/js/bootstrap.bundle.min.js' )}}"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="{{ url_for('static',filename= 'vendor/jquery-easing/jquery.easing.min.js' )}}"></script>
+  <script src="{{ url_for('static', filename ='vendor/magnific-popup/jquery.magnific-popup.min.js' )}}"></script>
+
+  <!-- Contact Form JavaScript -->
+<!--  <script src="{{ url_for('static',filename= 'js/jqBootstrapValidation.js' )}}"></script>-->
+<!--  <script src="{{ url_for('static',filename= 'js/contact_me.js' )}}"></script>-->
+
+  <!-- Custom scripts for this template -->
+  <script src="{{ url_for('static', filename='js/freelancer.min.js' )}}"></script>
+<!-- Authorize Toast -->
+<script>$(document).ready(function(){
+ $('.toast').toast('show');
+  $('.toast').toast({delay:15000, animation:false});
+});</script>
+
+</body>
+
+</html>
