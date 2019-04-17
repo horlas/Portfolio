@@ -73,6 +73,29 @@
 </div>
   {% endfor %}
     {% endif %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+
+
+    <div class="toast-header">
+    <strong class="mr-auto text-primary">Cher visiteur</strong>
+  </div>
+  <div class="toast-body">
+    {% for message in messages %}
+      {{ message }}
+    {% endfor %}
+  </div>
+
+  {% endif %}
+{% endwith %}
+
+
+
+
+
+
+
   </nav>
 
   <!-- Header -->
@@ -194,13 +217,7 @@
       <hr class="star-dark mb-5">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-
-
-
-          <!-------------- copy of the form --------->
-
-
-          <form name="EnvoiMessage" id="contactForm" novalidate="novalidate" method="post">
+          <form name="SendMessage" id="contactForm" novalidate="novalidate" method="post">
             {{form.hidden_tag()}}
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
@@ -208,7 +225,9 @@
 
                 {{ form.nom(class="form-control", required="required", placeholder="Nom")}}
 
-                <p class="help-block text-danger"></p>
+                {% for message in form.nom.errors %}
+                <p class="help-block text-danger"> {{ message }}</p>
+                {% endfor %}
               </div>
             </div>
             <div class="control-group">
@@ -217,55 +236,23 @@
 
                 {{ form.email(class="form-control", required="required", placeholder="Email")}}
 
-                <p class="help-block text-danger"></p>
+                {% for message in form.email.errors %}
+                <p class="help-block text-danger"> {{ message }}</p>
+                {% endfor %}
               </div>
             </div>
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 {{ form.message.label }}
-                                {{ form.message(class="form-control", required="required", placeholder="Message")}}
-
-
-                <p class="help-block text-danger"></p>
+                {{ form.message(class="form-control", required="required", placeholder="Message")}}
+              {% for message in form.message.errors %}
+                <p class="help-block text-danger"> {{ message }}</p>
+                {% endfor %}
               </div>
             </div>
             <p>{{ form.submit(class="btn btn-primary btn-xl") }}</p>
-<!--            <div class="form-group">-->
-<!--              <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Send</button>-->
-<!--            </div>-->
+
           </form>
-          <!--------- end of copy form ---------->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
       </div>
     </div>

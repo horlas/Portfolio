@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 flask = "*"
 flask-wtf = "*"
+flask-mail = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.6"
