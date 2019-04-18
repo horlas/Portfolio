@@ -5,7 +5,7 @@ import os
 #
 #     SECRET_KEY = 'MqI1t_qc4BwYj7Xr5Y-dJA' # or os.environ.get('SECRET_KEY')
 
-CSRF_ENABLED = True
+WTF_CSRF_ENABLED = True
 SECRET_KEY = 'MqI1t_qc4BwYj7Xr5Y-dJA'
 
 # Todo : crsf WTF_CSRF_ENABLED = True
