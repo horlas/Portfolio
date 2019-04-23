@@ -29,13 +29,13 @@ def index():
         email = request.form.get('email')
         message = request.form.get('message')
         send_email(nom, email, message)
-        flash('merci pour votre message')
+        flash('merci pour votre message', 'sucess')
         # return empty message
         message = form.message.data
         form.message.data = ''
         return render_template('index.html', form=form, message=message)
     else:
-        flash('le formulaire comporte des erreurs')
+        flash('le formulaire comporte des erreurs', 'danger')
         return render_template('index.html', form=form)
 
 
