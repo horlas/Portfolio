@@ -1,10 +1,7 @@
 import os
-
-
 WTF_CSRF_ENABLED = True
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-# Todo : crsf WTF_CSRF_ENABLED = True
 # email server
 
 MAIL_SERVER = 'smtp.gmail.com'

@@ -1,6 +1,5 @@
-#! /usr/bin/python3.6m
 # -*- coding:utf-8 -*-
-from flask import flash, request, render_template, url_for
+from flask import flash, request, render_template
 
 from app import app
 from .emails import send_email
@@ -37,7 +36,3 @@ def index():
     else:
         flash('le formulaire comporte des erreurs', 'danger')
         return render_template('index.html', form=form)
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
