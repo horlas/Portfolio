@@ -10,3 +10,14 @@ hr.star-light:after {
   color: #fff;
   background-color: #B34225 ;
 }
+
+/*h1 {
+ font-size: 11.9vw;
+}*/
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-weight: 400;
+    font-size: 2em !important;
+  }
+}

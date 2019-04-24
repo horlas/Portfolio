@@ -28,17 +28,7 @@
       <!-- Message section -->
 
   <div class="toast" data-delay="7000" >
-     {% if messages %}
-  {% for message in messages %}
-  <div class="toast-header">
-    <strong class="mr-auto text-primary">Cher visiteur</strong>
-  </div>
-  <div class="toast-body">
-    {{ message }}
-  </div>
-</div>
-  {% endfor %}
-    {% endif %}
+
 
 {% with messages = get_flashed_messages() %}
   {% if messages %}
@@ -55,7 +45,7 @@
 
   {% endif %}
 {% endwith %}
-
+  </div>
 
   </nav>
 
@@ -81,7 +71,7 @@
       <hr class="star-dark mb-5">
       <div class="row">
         <div class="col-lg-4 ml-auto">
-          <p class="lead">Curieuse et dynamique, j'ai développé une aptitude à passer d'une tache à l'autre, <br>
+          <p class="lead">Curieuse et dynamique, j'ai développé une aptitude à passer d'une t&acirc;che à l'autre, <br>
             à éprouver ma capacité d'adaptation et d'apprentissage. J'étends mes compétences en Python, Django et Flask, en base de données
             Postgres et Mysql , en Frontend: Materialize CSS , bootstrap, Jquery, VueJS, en gestion de projet : TDD, Git Agilité...</p>
         </div>
