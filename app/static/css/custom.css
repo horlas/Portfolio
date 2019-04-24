@@ -1,16 +1,24 @@
 .bg-primary {
-  background-color: #B34225 !important;
+  background-color: #B3650C !important;
 }
 
 .bg-secondary {
-  background-color: #37B38A  !important;
+  background-color: #007EB3 !important;
 }
 
 hr.star-light:after {
   color: #fff;
-  background-color: #B34225 ;
+  background-color: #B3650C;
 }
 
+.footer {
+   background-color: #5067B3 !important;
+
+}
+
+.copyright {
+  background-color: #1D3540 !important;
+}
 /*h1 {
  font-size: 11.9vw;
 }*/
